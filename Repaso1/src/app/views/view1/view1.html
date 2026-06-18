@@ -1,0 +1,51 @@
+<div id="container">
+  <header>
+    <h1>LIBRARY SEARCH</h1>
+  </header>
+
+  <!-- EJERCICIO 1 -->
+  @if (mode === 'form') {
+    <section>
+      <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" method="post">
+        <div class="answer-bank">
+          <div class="answer">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Book title"
+              formControlName="name"
+            />
+          </div>
+          <div class="answer">
+            <input type="submit" value="Buscar" class="primary" />
+          </div>
+        </div>
+      </form>
+    </section>
+  }
+
+  @if (mode === 'results') {
+    <div id="page">
+      <section>
+        <div class="grid">
+          <!-- BOOK -->
+          @for (b of books; track b.title) {
+            <app-book
+              [book]="b"
+              (bookClicked)="detail($event)"
+            ></app-book>
+          }
+        </div>
+
+        <div id="render-more">
+          <button (click)="returnForm()">Volver</button>
+        </div>
+      </section>
+    </div>
+  }
+
+  @if (mode === 'modal') {
+    <app-book [book]="selectedBook" (closeBook)="returnResults()"></app-book>
+  }
+</div>

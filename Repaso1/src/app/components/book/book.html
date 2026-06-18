@@ -1,0 +1,13 @@
+<div class="card">
+  <div
+    class="photo"
+    [style.background-image]="'url(' + getCoverUrl() + ')'"
+    (click)="closeModal()"
+  ></div>
+  <div class="footer">
+    <div class="titles">
+      <h2 class="card-title" (click)="selectBook()">{{ book.title }}</h2>
+      <p class="card-subtitle">{{ book.first_publish_year }}</p>
+    </div>
+  </div>
+</div>

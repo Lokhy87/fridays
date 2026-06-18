@@ -1,0 +1,52 @@
+<!-- EJERCICIO 3 -->
+<div id="page">
+  <section>
+    <h1>ENGLISH WORD FINDER</h1>
+
+    @if (mode === 'form') {
+      <!-- FORM -->
+      <form method="post" (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+        <div class="answer-bank">
+          <div class="answer">
+            <input
+              type="text"
+              name="word"
+              id="word"
+              formControlName="name"
+              placeholder="English word"
+            />
+          </div>
+
+          <div class="answer">
+            <input type="submit" value="Search" class="primary" />
+          </div>
+        </div>
+      </form>
+    }
+
+    @if (mode === 'selection') {
+      <!-- MENU -->
+      <div id="render-more">
+        <button (click)="showDefinition()">MEANINGS</button>
+        <button (click)="showSynonyms()">SYNONYMS</button>
+        <button (click)="showAntonyms()">ANTONYMS</button>
+      </div>
+    }
+
+    @if (mode === 'definition' || mode === 'synonyms' || mode === 'antonyms') {
+      <!-- RESULT -->
+      <div class="grid">
+        <!-- TEXT -->
+        @for (r of results; track r) {
+          <app-text [text]="r"></app-text>
+        }
+      </div> 
+
+      <div id="render-more">
+        <button (click)="returnResults()">BACK</button>
+        <button (click)="newSearch()">NEW SEARCH</button>
+      </div>
+    }
+
+  </section>
+</div>

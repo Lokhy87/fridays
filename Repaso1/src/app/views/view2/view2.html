@@ -1,0 +1,22 @@
+<!-- EJERCICIO 2 -->
+<div id="page">
+  <section>
+    <h1>DOG GALLERY</h1>
+
+    <div class="grid">
+      @if (mode === 'images') {
+        @for (img of images; track img) {
+          <app-dog [selectedImage]="img" (imageClicked)="selectImage($event)"></app-dog>
+        }
+        <div id="render-more">
+          <button (click)="reloadGallery()">RECARGAR</button>
+        </div>
+      }
+    </div>
+
+    @if (mode === 'detail') {
+      <!-- DOG -->
+      <app-dog [selectedImage]="selectedphoto" (imageClosed)="returnGallery()"></app-dog>
+    }
+  </section>
+</div>
