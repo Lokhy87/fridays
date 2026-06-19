@@ -5,7 +5,7 @@ import { Modal } from '../../components/modal/modal';
 import { Pokemon } from '../../models/pokemon.interface';
 
 @Component({
-  selector: 'app-exercise-three',
+  selector: 'app-ejercicio3',
   standalone: true,
   imports: [PokeCard, Modal],
   templateUrl: './ejercicio3.html',

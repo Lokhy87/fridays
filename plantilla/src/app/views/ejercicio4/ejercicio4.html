@@ -1,1 +1,21 @@
-<p>ejercicio4 works!</p>
+<div id="page">
+    <section style="text-align: center;">
+        <h1>Insert Word</h1>
+        <div class="content">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                <input type="text" formControlName="word" placeholder="Word" required autofocus><br>
+                <div id='render'>
+                    <button type="submit">SEARCH</button>
+                </div>
+            </form>
+        </div>
+
+        @if (currentIndex >= 0 && searchHistory.length > 0) {
+            <app-word 
+                [wordInfo]="searchHistory[currentIndex]"
+                (prevSearch)="goPrevious()"
+                (nextSearch)="goNext()">
+            </app-word>
+        }
+    </section>
+</div>
