@@ -1,0 +1,19 @@
+<div class="card">
+  <p>{{ episode.name }}</p>
+  <p>{{ episode.air_date }}</p>
+  <p>{{ episode.episode }}</p>
+  
+  @if (characters.length > 0) {
+    <div>
+      <div class="image-container" (click)="onClose()" style="cursor: pointer;">
+        <img [src]="characters[index].image" [alt]="characters[index].name">
+      </div>
+      <span class="caption">{{ characters[index].name }}</span>
+    </div>
+  }
+
+  <div class="render">
+    <button (click)="onPrev()">Anterior</button>
+    <button (click)="onNext()">Siguiente</button>
+  </div>
+</div>

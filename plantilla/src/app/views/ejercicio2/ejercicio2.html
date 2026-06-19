@@ -1,0 +1,26 @@
+<div id="page">
+    @if (showForm) {
+        <section style="text-align: center;">
+            <h1>Rick & Morty</h1>
+            <div class="content">
+                <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                    <input type="text" formControlName="episodeId" placeholder="Capítulo (id)" required autofocus><br>
+                    <div class="render">
+                        <button type="submit">MOSTRAR</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    } @else {
+        @for (item of history; track item.episode.id) {
+            <app-card 
+                [episode]="item.episode" 
+                [characters]="item.characters" 
+                [index]="item.currentIndex"
+                (next)="handleNext(item)"
+                (prev)="handlePrev(item)"
+                (close)="handleClose()">
+            </app-card>
+        }
+    }
+</div>

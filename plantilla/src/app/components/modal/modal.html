@@ -1,0 +1,19 @@
+<div class="modal show-modal">
+    <div class="modal-content">
+        <span class="close-button" (click)="onClose()">×</span>
+        <div class="container-modal">
+            <div class="poke-card">
+                <div class="poke-card-header">
+                    <img [src]="images[currentIndex]" [alt]="pokemon.name" />
+                </div>
+                <div class="poke-card-body">
+                    <span class="tag" style="text-transform: capitalize;">{{ pokemon.name }}</span>
+                </div>
+                <div id='render'>
+                    <button type="button" (click)="prevImage()">ANTERIOR</button>
+                    <button type="button" (click)="nextImage()">SIGUIENTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

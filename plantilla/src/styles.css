@@ -1,0 +1,322 @@
+/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+
+.elementor-grid {
+  display: grid;
+}
+
+.elementor-grid-3 .elementor-grid {
+  grid-template-columns: repeat(3, 1fr)
+}
+
+.elementor-grid-1 .elementor-grid {
+  grid-template-columns: repeat(1, 1fr)
+}
+
+body {
+  background-color: #efefef;
+  color: #3a3a3a;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  grid-column-gap: 25px;
+}
+
+.photo-container {
+  height: 285px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center
+}
+
+.content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  height: 375px;
+  width: 300px;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.container-modal {
+  display: inline-block;
+  width: 940px;
+  margin: auto;
+}
+
+
+.card-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  height: 95px;
+  overflow-y: auto;
+}
+
+.tag {
+  background-color: #ccc;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  padding: 2px 10px;
+  text-transform: uppercase;
+}
+
+.card-body h4 {
+  margin: 10px 0;
+}
+
+.card-body p {
+  font-size: 14px;
+  margin: 0 0 40px 0;
+  font-weight: 500;
+  color: rgb(70, 68, 68);
+}
+
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
+.render {
+  text-align: center;
+}
+
+.render button {
+  background-color: white;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  color: #C4001A;
+  border: solid 1px #C4001A;
+  margin-bottom: 30px;
+  margin-top: 20px;
+
+}
+
+.render button:hover {
+  background-color: rgba(196, 0, 26, 0.05);
+}
+
+.header {
+  height: 110px;
+  background-color: #C4001A;
+  padding: 20px;
+  border-bottom: 1px solid #C4001A;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.question-link {
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0 40px;
+}
+
+.answer-bank {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.answer {
+  display: flex;
+  margin: 20px;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  color: #C4001A;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.answer {
+  color: #61bff9;
+  border: 1px solid #C4001A;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.answer:hover {
+  background-color: #f78383;
+  transition: background-color .1s, color .1s;
+}
+
+.answer:active {
+  color: #ffffff;
+}
+
+
+
+.card {
+  border: 1px solid #C4001A;
+  width: 25%;
+  padding: 1.11rem;
+  border-radius: 5px;
+  margin: 0 auto 4.44rem auto;
+  background-color: white;
+}
+
+.card .image-container {
+  margin-bottom: 1.11rem;
+}
+
+.card .image-container img {
+  width: 100%;
+  height: 250px;
+}
+
+.photo.first {
+  position: relative;
+  top: -2.77rem;
+  margin-bottom: 1.67rem;
+}
+
+
+.journal {
+  padding: 0 25% 4rem 25%;
+  color: #4a4a4a;
+  font-family: "Work Sans", serif;
+}
+
+#page {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.poke-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+}
+
+.poke-card-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.poke-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+}
+
+.poke-card-body h4 {
+  margin: 10px 0;
+}
+
+.poke-card-body p {
+  font-size: 14px;
+  margin: 0 0 40px 0;
+  font-weight: 500;
+  color: rgb(70, 68, 68);
+}
+
+
+#render {
+    text-align: center;
+}
+
+#render button {
+    background-color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    color: #C4001A;
+    border: solid 1px #C4001A;
+    margin-bottom: 30px;
+    margin-top: 20px;
+
+}
+
+#render button:hover {
+    background-color: rgba(196, 0, 26, 0.05);
+}
