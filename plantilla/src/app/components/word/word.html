@@ -5,10 +5,10 @@
     <button type="button" (click)="setMode('synonyms')">SYNONYMS</button>
     <button type="button" (click)="setMode('antonyms')">ANTONYMS</button>
 
-    <div style="text-align: left; margin-top: 20px;">
+    <div style="text-align: left; max-width: 500px; margin: 20px auto; padding: 0 15px;">
         @if (displayMode === 'definitions') {
             @for (meaning of wordInfo.meanings; track meaning.partOfSpeech) {
-                <h3>{{ meaning.partOfSpeech }}</h3>
+                <p><strong>{{ meaning.partOfSpeech }}:</strong></p>
                 <ul>
                     @for (def of meaning.definitions; track def.definition) {
                         <li>{{ def.definition }}</li>
@@ -16,6 +16,7 @@
                 </ul>
             }
         } @else if (displayMode === 'synonyms') {
+            <p><strong>Synonyms:</strong></p>
             <ul>
                 @for (meaning of wordInfo.meanings; track meaning.partOfSpeech) {
                     @for (syn of meaning.synonyms; track syn) {
@@ -24,6 +25,7 @@
                 }
             </ul>
         } @else if (displayMode === 'antonyms') {
+            <p><strong>Antonyms:</strong></p>
             <ul>
                 @for (meaning of wordInfo.meanings; track meaning.partOfSpeech) {
                     @for (ant of meaning.antonyms; track ant) {
