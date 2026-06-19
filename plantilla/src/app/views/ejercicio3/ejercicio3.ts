@@ -4,36 +4,36 @@ import { PokeCard } from '../../components/poke-card/poke-card';
 import { Modal } from '../../components/modal/modal';
 import { Pokemon } from '../../models/pokemon.interface';
 
-
 @Component({
-  selector: 'app-ejercicio3',
+  selector: 'app-exercise-three',
   standalone: true,
   imports: [PokeCard, Modal],
   templateUrl: './ejercicio3.html',
   styleUrl: './ejercicio3.css'
 })
 export class Ejercicio3 implements OnInit {
-  public pokemonService = inject(PokemonService);
+  public data = inject(PokemonService);
 
-  // Array vacío e inicializado.
   public pokemonList: Pokemon[] = [];
-  
   public selectedPokemon: Pokemon | null = null;
   public showModal: boolean = false;
 
+  public getResponse(): void {
+    this.data.getPokemonData('bulbasaur').subscribe((response) => {
+      this.pokemonList.push(response);
+    });
+
+    this.data.getPokemonData('ditto').subscribe((response) => {
+      this.pokemonList.push(response);
+    });
+
+    this.data.getPokemonData('pikachu').subscribe((response) => {
+      this.pokemonList.push(response);
+    });
+  }
+
   public ngOnInit(): void {
-    // 3 llamadas rectas y directas. Sin condicionales, sin promesas, sin CD.
-    this.pokemonService.getPokemonData('bulbasaur').subscribe((res) => {
-      this.pokemonList.push(res);
-    });
-
-    this.pokemonService.getPokemonData('ditto').subscribe((res) => {
-      this.pokemonList.push(res);
-    });
-
-    this.pokemonService.getPokemonData('pikachu').subscribe((res) => {
-      this.pokemonList.push(res);
-    });
+    this.getResponse();
   }
 
   public handleSelectPokemon(pokemon: Pokemon): void {
@@ -46,6 +46,6 @@ export class Ejercicio3 implements OnInit {
   }
 
   public showAllCards(): void {
-    this.selectedPokemon = null; // Reiniciamos la selección
+    this.selectedPokemon = null;
   }
 }
